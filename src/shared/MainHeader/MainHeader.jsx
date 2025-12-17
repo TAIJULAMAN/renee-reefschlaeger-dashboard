@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { IoMenu, IoNotificationsOutline, IoChatbubbleEllipses, IoClose } from "react-icons/io5";
+import { IoMenu, IoNotificationsOutline, IoClose } from "react-icons/io5";
 import Chat from "../../pages/chat/Chat";
 
 const MainHeader = ({ toggleSidebar }) => {
@@ -25,21 +25,23 @@ const MainHeader = ({ toggleSidebar }) => {
     };
   }, []);
 
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
-
   return (
     <div className="relative w-full px-3 sm:px-4 lg:px-5">
       <header className="shadow-sm rounded-lg border border-slate-200 overflow-hidden bg-white">
-        <div className="flex justify-between items-center px-3 sm:px-5 md:px-10 h-[60px] sm:h-[70px] lg:h-[80px]">
+        <div className="flex items-center px-3 sm:px-5 md:px-10 h-[60px] sm:h-[70px] lg:h-[80px]">
+          {/* Left: Hamburger Menu */}
           <button
             onClick={toggleSidebar}
             aria-label="Toggle sidebar"
-            className="p-2 rounded-lg hover:bg-blue-50 active:bg-blue-100 focus:outline-none transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg hover:bg-blue-50 active:bg-blue-100 focus:outline-none transition-colors duration-200"
           >
-            <IoMenu className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
+            <IoMenu className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" />
           </button>
+
+          {/* Spacer */}
+          <div className="flex-1"></div>
+
+          {/* Right: Notification & Profile */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Notification */}
             <button

@@ -86,15 +86,12 @@ const RecentUsers = () => {
       <ConfigProvider
         theme={{
           components: {
-            InputNumber: {
-              activeBorderColor: "blue-600",
-            },
-
             Table: {
-              headerBg: "blue-600",
-              headerColor: "blue-600",
-              cellFontSize: 16,
-              headerSplitColor: "blue-600",
+              headerBg: '#2563eb', // Blue-600
+              headerColor: '#ffffff', // White text
+              cellFontSize: 14,
+              headerSplitColor: 'transparent',
+              borderColor: '#e5e7eb',
             },
           },
         }}
@@ -104,8 +101,22 @@ const RecentUsers = () => {
           columns={columns}
           pagination={false}
           scroll={{ x: "max-content" }}
+          className="custom-table"
         />
       </ConfigProvider>
+
+      <style jsx global>{`
+        .custom-table .ant-table-thead > tr > th {
+          background: #60a5fa !important;
+          color: white !important;
+          font-weight: 600 !important;
+          border-bottom: 2px solid #3b82f6 !important;
+        }
+        
+        .custom-table .ant-table-thead > tr > th::before {
+          display: none !important;
+        }
+      `}</style>
     </>
   );
 };
