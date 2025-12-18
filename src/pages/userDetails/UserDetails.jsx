@@ -5,6 +5,7 @@ import { MdBlock } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { FiTrash2 } from "react-icons/fi";
 import { FiEdit2 } from 'react-icons/fi';
+import { FaRegEye } from "react-icons/fa";
 function UserDetails() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false); // block modal
@@ -149,11 +150,11 @@ function UserDetails() {
       key: "action",
       render: (_, record) => (
         <div className="flex gap-2">
+          <button className="" onClick={() => showViewModal(record)}>
+            <FaRegEye className="text-blue-600 w-5 h-5 cursor-pointer rounded-md" />
+          </button>
           <button className="" onClick={() => openBlock(record)}>
             <MdBlock className="h-5 w-5 text-red-600 cursor-pointer rounded-md" />
-          </button>
-          <button className="" onClick={() => showViewModal(record)}>
-            <FiEdit2 className="text-blue-600 w-5 h-5 cursor-pointer rounded-md" />
           </button>
         </div>
 
@@ -186,60 +187,59 @@ function UserDetails() {
 
   return (
     <div>
-      <div className="bg-blue-600 px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap md:flex-nowrap items-start md:items-center gap-2 md:gap-3">
-        <button
-          onClick={() => navigate(-1)}
-          className="text-white hover:opacity-90 transition"
-          aria-label="Go back"
-        >
-          <IoChevronBack className="w-6 h-6" />
-        </button>
-        <h1 className="text-white text-xl sm:text-2xl font-bold">User Management</h1>
-        {/* Mobile search */}
-        <div className="relative w-full md:hidden mt-1">
+      {/* Modern Header with Gradient */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 md:px-6 py-4 md:py-5 rounded-2xl mb-5 shadow-lg">
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-white hover:bg-white/20 p-2 rounded-lg transition-all duration-200"
+            aria-label="Go back"
+          >
+            <IoChevronBack className="w-6 h-6" />
+          </button>
+          <h1 className="text-white text-2xl sm:text-3xl font-bold">User Management</h1>
+
+          {/* Desktop Search */}
+          <div className="hidden md:flex ml-auto gap-3">
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search users..."
+                className="bg-white/90 backdrop-blur-sm text-slate-800 placeholder-slate-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 transition-all w-64"
+              />
+              <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Search */}
+        <div className="relative w-full md:hidden mt-3">
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search users..."
-            className="w-full bg-white text-[#0D0D0D] placeholder-gray-500 pl-10 pr-3 py-2 rounded-md focus:outline-none"
+            className="w-full bg-white/90 backdrop-blur-sm text-slate-800 placeholder-slate-500 pl-10 pr-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
           />
-          <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-        </div>
-        <div className="ml-0 md:ml-auto flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
-          <div className="relative hidden md:block">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search users..."
-              className="bg-white text-[#0D0D0D] placeholder-[#111827] pl-10 pr-3 py-2 rounded-md focus:outline-none"
-            />
-            <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#111827]" />
-          </div>
+          <IoSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5" />
         </div>
       </div>
 
       <ConfigProvider
         theme={{
           components: {
-            InputNumber: {
-              activeBorderColor: "#00c0b5",
-            },
             Pagination: {
-              colorPrimaryBorder: "#111827",
-              colorBorder: "#111827",
-              colorPrimaryHover: "#111827",
-              colorTextPlaceholder: "#111827",
-              itemActiveBgDisabled: "#111827",
-              colorPrimary: "#111827",
+              colorPrimary: "#2563eb",
+              colorPrimaryHover: "#1d4ed8",
             },
             Table: {
-              headerBg: "blue-600",
-              headerColor: "#000000", // Changed to black
-              cellFontSize: 16,
-              headerSplitColor: "blue-600",
-              colorTextHeading: "#000000", // Ensure header text is black
+              headerBg: '#60a5fa',
+              headerColor: '#ffffff',
+              cellFontSize: 14,
+              headerSplitColor: 'transparent',
+              borderColor: '#e5e7eb',
             },
           },
         }}
@@ -249,31 +249,52 @@ function UserDetails() {
           columns={columns}
           pagination={{ pageSize: 10 }}
           scroll={{ x: "max-content" }}
+          className="custom-user-table"
         />
+
+        <style jsx global>{`
+          .custom-user-table .ant-table-thead > tr > th {
+            background: #60a5fa !important;
+            color: white !important;
+            font-weight: 600 !important;
+          }
+          
+          .custom-user-table .ant-table-thead > tr > th::before {
+            display: none !important;
+          }
+          
+          .custom-user-table .ant-table-tbody > tr:hover > td {
+            background: #eff6ff !important;
+          }
+        `}</style>
         {/* Block Modal */}
         <Modal
           open={isModalOpen}
           centered
           onCancel={handleCancel}
           footer={null}
+          className="block-user-modal"
         >
-          <div className="flex flex-col justify-center items-center py-10">
-            <h1 className="text-3xl text-center text-[#111827]">Block User</h1>
-            <p className="text-xl text-center mt-5">
+          <div className="flex flex-col justify-center items-center py-8">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <MdBlock className="w-8 h-8 text-red-600" />
+            </div>
+            <h1 className="text-2xl md:text-3xl font-bold text-center text-slate-800 mb-3">Block User</h1>
+            <p className="text-base md:text-lg text-center text-slate-600 mb-6 px-4">
               {selectedUser
-                ? `Do you want to block ${selectedUser.fullName}?`
-                : `Do you want to block this user?`}
+                ? `Are you sure you want to block ${selectedUser.fullName}?`
+                : `Are you sure you want to block this user?`}
             </p>
-            <div className="text-center py-5 w-full flex justify-center gap-3">
+            <div className="flex justify-center gap-3 w-full px-4">
               <button
                 onClick={handleCancel}
-                className="bg-gray-800 text-white font-semibold py-3 px-5 rounded-lg"
+                className="flex-1 max-w-[150px] bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-3 px-6 rounded-xl transition-all duration-200"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmBlock}
-                className="bg-red-600 text-white font-semibold py-3 px-5 rounded-lg"
+                className="flex-1 max-w-[150px] bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200"
               >
                 Block
               </button>
@@ -292,25 +313,25 @@ function UserDetails() {
         >
           {selectedUser && (
             <div className="relative">
-              {/* Header with green gradient */}
-              <div className="bg-blue-600 p-6 -m-6 mb-6 rounded-t-lg">
+              {/* Header with gradient */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 -m-6 mb-6 rounded-t-lg">
                 <div className="flex items-center gap-6">
                   <div className="relative">
                     <img
                       src={"/userimg.png"}
                       alt={selectedUser.fullName}
-                      className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                      className="w-24 h-24 rounded-full border-4 border-white shadow-xl object-cover"
                     />
                   </div>
                   <div className="text-white">
-                    <h2 className="text-3xl font-bold mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-2">
                       {selectedUser.fullName}
                     </h2>
-                    <div className="flex items-center gap-3 mb-1">
-                      {/* <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                        {selectedUser.clinic}
-                      </span> */}
-                      <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
+                        {selectedUser.role}
+                      </span>
+                      <span className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
                         Joined: {selectedUser.joined}
                       </span>
                     </div>
@@ -320,31 +341,37 @@ function UserDetails() {
 
               {/* Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-black text-sm">Email</div>
-                  <div className="text-lg font-semibold">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 rounded-xl shadow-sm">
+                  <div className="text-slate-600 text-sm font-medium mb-1">Email</div>
+                  <div className="text-lg font-semibold text-slate-800">
                     {selectedUser.email}
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-black text-sm">Phone No</div>
-                  <div className="text-lg font-semibold">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 rounded-xl shadow-sm">
+                  <div className="text-slate-600 text-sm font-medium mb-1">Phone No</div>
+                  <div className="text-lg font-semibold text-slate-800">
                     {selectedUser.phone}
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
-                  <div className="text-black text-sm">Joined Date</div>
-                  <div className="text-lg font-semibold">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 rounded-xl shadow-sm">
+                  <div className="text-slate-600 text-sm font-medium mb-1">Joined Date</div>
+                  <div className="text-lg font-semibold text-slate-800">
                     {selectedUser.joined}
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 rounded-xl shadow-sm">
+                  <div className="text-slate-600 text-sm font-medium mb-1">Clinic</div>
+                  <div className="text-lg font-semibold text-slate-800">
+                    {selectedUser.clinic}
                   </div>
                 </div>
               </div>
 
               {/* Action buttons */}
-              <div className="flex justify-end items-center mt-8 pt-6 border-t border-gray-200">
+              <div className="flex justify-end items-center mt-8 pt-6 border-t border-slate-200">
                 <button
                   onClick={handleViewCancel}
-                  className="bg-blue-600 text-white font-semibold px-8 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200"
                 >
                   Close
                 </button>

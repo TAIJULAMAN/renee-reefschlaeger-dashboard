@@ -8,6 +8,7 @@ import { IoCloseSharp, IoLogOutOutline } from "react-icons/io5";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { BsCurrencyDollar, BsCreditCard } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
+import { FaCalendarCheck } from "react-icons/fa";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -106,6 +107,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <BsCurrencyDollar className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/earnings") ? "" : "group-hover:scale-110"}`} />
               <p className="text-xs sm:text-sm font-semibold">Earnings</p>
               {isActive("/earnings") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
+            </li>
+          </Link>
+
+          {/* Bookings */}
+          <Link to="/bookings" onClick={handleLinkClick}>
+            <li
+              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
+                ${isActive("/bookings")
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
+                }`}
+            >
+              <FaCalendarCheck className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/bookings") ? "" : "group-hover:scale-110"}`} />
+              <p className="text-xs sm:text-sm font-semibold">Bookings</p>
+              {isActive("/bookings") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
             </li>
           </Link>
 

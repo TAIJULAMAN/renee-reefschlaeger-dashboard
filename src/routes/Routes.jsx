@@ -19,6 +19,7 @@ import CreateAdmin from "../pages/Create Admin/CreateAdmin";
 import AddAdmin from "../pages/Add Admin/AddAdmin"
 import Categories from "../pages/Categories/Categories";
 import Earnings from "../pages/Earnings/Earnings";
+import Bookings from "../pages/Bookings/Bookings";
 import Notifications from "../pages/Notifications/Notifications";
 import Subscriptions from "../pages/subscriptions/Subscriptions";
 import Chat from "../pages/chat/Chat";
@@ -54,8 +55,8 @@ const router = createBrowserRouter([
         element: <UserDetails />,
       },
 
-    
-     
+
+
       {
         path: "/create-user",
         element: <CreateUser />,
@@ -110,19 +111,23 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage />,
       },
-  
+
       {
-        path:"/categories",
-        element:<Categories/>
+        path: "/categories",
+        element: <Categories />
       },
       {
-        path:"/earnings",
-        element:<Earnings/>
-      }, 
+        path: "/earnings",
+        element: <Earnings />
+      },
       {
-        path:"/subscriptions",
-        element:<Subscriptions/>
-      }, 
+        path: "/bookings",
+        element: <Bookings />
+      },
+      {
+        path: "/subscriptions",
+        element: <Subscriptions />
+      },
       // {
       //   path:"/chat",
       //   element:<Chat/>

@@ -74,8 +74,6 @@ const RecentUsers = () => {
         </div>
       ),
     },
-    // { title: "Role", dataIndex: "role", key: "role" },
-    // { title: "Clinic", dataIndex: "clinic", key: "clinic" },
     { title: "Email", dataIndex: "email", key: "email" },
     { title: "Phone No", dataIndex: "phone", key: "phone" },
     { title: "Joined Date", dataIndex: "joined", key: "joined" },
@@ -87,8 +85,8 @@ const RecentUsers = () => {
         theme={{
           components: {
             Table: {
-              headerBg: '#2563eb', // Blue-600
-              headerColor: '#ffffff', // White text
+              headerBg: '#2563eb',
+              headerColor: '#ffffff',
               cellFontSize: 14,
               headerSplitColor: 'transparent',
               borderColor: '#e5e7eb',
@@ -110,7 +108,6 @@ const RecentUsers = () => {
           background: #60a5fa !important;
           color: white !important;
           font-weight: 600 !important;
-          border-bottom: 2px solid #3b82f6 !important;
         }
         
         .custom-table .ant-table-thead > tr > th::before {
