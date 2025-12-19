@@ -30,6 +30,7 @@ import Content from "../pages/Content/Content";
 import PrivateTransfers from "../pages/Content/PrivateTransfers";
 import PopularDayTrips from "../pages/Content/PopularDayTrips";
 import PopularMultiDayTours from "../pages/Content/PopularMultiDayTours";
+import DayTrips from "../pages/Content/DayTrips";
 import PopularTransferRoutes from "../pages/Content/PopularTransferRoutes";
 
 const router = createBrowserRouter([
@@ -126,6 +127,10 @@ const router = createBrowserRouter([
       {
         path: "/content/popular-transfer-routes",
         element: <PopularTransferRoutes />
+      },
+      {
+        path: "/content/day-trips",
+        element: <DayTrips />
       },
       {
         path: "/add-admin",

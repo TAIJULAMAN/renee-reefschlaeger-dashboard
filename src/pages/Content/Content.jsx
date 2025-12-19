@@ -53,6 +53,16 @@ export default function Content() {
                             <IoChevronForward className="text-gray-500" />
                         </Link>
                     </li>
+                    {/* Day Trips */}
+                    <li>
+                        <Link
+                            to="/content/day-trips"
+                            className="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
+                        >
+                            <span className="text-gray-800 text-base">Day Trips</span>
+                            <IoChevronForward className="text-gray-500" />
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </div>
