@@ -2,7 +2,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { RxDashboard } from "react-icons/rx";
 import { LuUsers } from "react-icons/lu";
-import { TbBrandWechat, TbReport } from "react-icons/tb";
+import { TbBrandWechat, TbReport, TbTruckDelivery } from "react-icons/tb";
 import { IoMdSettings } from "react-icons/io";
 import { IoCloseSharp, IoLogOutOutline } from "react-icons/io5";
 import { MdAdminPanelSettings } from "react-icons/md";
@@ -125,33 +125,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </li>
           </Link>
 
-          {/* Subscriptions */}
-          <Link to="/subscriptions" onClick={handleLinkClick}>
+          {/* Vehicles */}
+          <Link to="/vehicles" onClick={handleLinkClick}>
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/subscriptions")
+                ${isActive("/vehicles")
                   ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >
-              <BsCreditCard className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/subscriptions") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Subscriptions</p>
-              {isActive("/subscriptions") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
-
-          {/* Categories */}
-          <Link to="/categories" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/categories")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <BiCategory className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/categories") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Categories</p>
-              {isActive("/categories") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
+              <TbTruckDelivery className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/vehicles") ? "" : "group-hover:scale-110"}`} />
+              <p className="text-xs sm:text-sm font-semibold">Vehicles</p>
+              {isActive("/vehicles") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
             </li>
           </Link>
 

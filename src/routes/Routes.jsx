@@ -23,6 +23,7 @@ import Bookings from "../pages/Bookings/Bookings";
 import Notifications from "../pages/Notifications/Notifications";
 import Subscriptions from "../pages/subscriptions/Subscriptions";
 import Chat from "../pages/chat/Chat";
+import Vehicles from "../pages/Vehicles/Vehicles";
 
 const router = createBrowserRouter([
   {
@@ -127,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: "/subscriptions",
         element: <Subscriptions />
+      },
+      {
+        path: "/vehicles",
+        element: <Vehicles />
       },
       // {
       //   path:"/chat",

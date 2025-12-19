@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { IoChevronBack } from 'react-icons/io5';
-import { FaDollarSign, FaCheckCircle, FaChartLine } from 'react-icons/fa';
+import { IoChevronBack, IoClose } from 'react-icons/io5';
+import { FaDollarSign, FaCheckCircle, FaChartLine, FaRegEye } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { ConfigProvider, Table } from 'antd';
+import { ConfigProvider, Table, Modal } from 'antd';
 
 const Earnings = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [selectedRecord, setSelectedRecord] = useState(null);
+
+  const showViewModal = (record) => {
+    setSelectedRecord(record);
+    setIsViewModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsViewModalOpen(false);
+    setSelectedRecord(null);
+  };
 
   const transactions = [
     { key: 1, bookingId: 'BK-001', customer: 'John Doe', date: '2025-11-28', amount: 120.00, status: 'Completed' },
@@ -61,6 +73,19 @@ const Earnings = () => {
           }`}>
           {status}
         </span>
+      ),
+    },
+    {
+      title: "Action",
+      key: "action",
+      align: 'center',
+      render: (_, record) => (
+        <button
+          className="p-2 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+          onClick={() => showViewModal(record)}
+        >
+          <FaRegEye className="text-blue-600 w-5 h-5" />
+        </button>
       ),
     },
   ];
@@ -202,6 +227,53 @@ const Earnings = () => {
           }
         `}</style>
       </ConfigProvider>
+
+      {/* View Modal */}
+      <Modal
+        title={<span className="text-lg font-semibold">Transaction Details</span>}
+        open={isViewModalOpen}
+        onCancel={handleModalClose}
+        footer={[
+          <button
+            key="close"
+            onClick={handleModalClose}
+            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"
+          >
+            Close
+          </button>,
+        ]}
+        width={600}
+      >
+        {selectedRecord && (
+          <div className="space-y-4 py-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-slate-500 font-medium">Booking ID</p>
+                <p className="text-base font-semibold text-blue-600">{selectedRecord.bookingId}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-500 font-medium">Customer</p>
+                <p className="text-base font-semibold text-slate-800">{selectedRecord.customer}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-500 font-medium">Date</p>
+                <p className="text-base font-semibold text-slate-800">{selectedRecord.date}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-500 font-medium">Amount</p>
+                <p className="text-base font-semibold text-green-600">${selectedRecord.amount.toFixed(2)}</p>
+              </div>
+              <div className="col-span-2">
+                <p className="text-sm text-slate-500 font-medium">Status</p>
+                <span className={`inline-block mt-1 px-3 py-1 rounded-full text-sm font-medium ${selectedRecord.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                  }`}>
+                  {selectedRecord.status}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
