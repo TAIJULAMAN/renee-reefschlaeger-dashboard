@@ -27,6 +27,10 @@ import Vehicles from "../pages/Vehicles/Vehicles";
 import Reviews from "../pages/Reviews/Reviews";
 import FAQ from "../pages/FAQ/FAQ";
 import Content from "../pages/Content/Content";
+import PrivateTransfers from "../pages/Content/PrivateTransfers";
+import PopularDayTrips from "../pages/Content/PopularDayTrips";
+import PopularMultiDayTours from "../pages/Content/PopularMultiDayTours";
+import PopularTransferRoutes from "../pages/Content/PopularTransferRoutes";
 
 const router = createBrowserRouter([
   {
@@ -106,6 +110,22 @@ const router = createBrowserRouter([
       {
         path: "/content",
         element: <Content />
+      },
+      {
+        path: "/content/private-transfers",
+        element: <PrivateTransfers />
+      },
+      {
+        path: "/content/popular-day-trips",
+        element: <PopularDayTrips />
+      },
+      {
+        path: "/content/popular-multi-day-tours",
+        element: <PopularMultiDayTours />
+      },
+      {
+        path: "/content/popular-transfer-routes",
+        element: <PopularTransferRoutes />
       },
       {
         path: "/add-admin",

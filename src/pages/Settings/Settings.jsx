@@ -13,16 +13,6 @@ export default function Settings() {
 
         {/* List */}
         <ul className="divide-y divide-gray-200">
-          {/* Edit Profile */}
-          <li>
-            <Link
-              to="/profile"
-              className="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
-            >
-              <span className="text-gray-800 text-base">Edit Profile</span>
-              <IoChevronForward className="text-gray-500" />
-            </Link>
-          </li>
           {/* Privacy Policy */}
           <li>
             <Link
