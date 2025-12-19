@@ -8,7 +8,7 @@ import { IoCloseSharp, IoLogOutOutline } from "react-icons/io5";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { BsCurrencyDollar, BsCreditCard } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
-import { FaCalendarCheck } from "react-icons/fa";
+import { FaCalendarCheck, FaStar } from "react-icons/fa";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -140,8 +140,23 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </li>
           </Link>
 
+          {/* Reviews */}
+          <Link to="/reviews" onClick={handleLinkClick}>
+            <li
+              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
+                ${isActive("/reviews")
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
+                }`}
+            >
+              <FaStar className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/reviews") ? "" : "group-hover:scale-110"}`} />
+              <p className="text-xs sm:text-sm font-semibold">Reviews</p>
+              {isActive("/reviews") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
+            </li>
+          </Link>
+
           {/* Chat */}
-          <Link to="/chat" onClick={handleLinkClick}>
+          {/* <Link to="/chat" onClick={handleLinkClick}>
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/chat")
@@ -153,7 +168,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <p className="text-xs sm:text-sm font-semibold">Chat</p>
               {isActive("/chat") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
             </li>
-          </Link>
+          </Link> */}
         </div>
 
         {/* Divider */}

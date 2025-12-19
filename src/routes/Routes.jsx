@@ -17,13 +17,15 @@ import AboutUs from "../pages/optional/AboutUs";
 import EditProfile from "../pages/profile/EditProfile";
 import CreateAdmin from "../pages/Create Admin/CreateAdmin";
 import AddAdmin from "../pages/Add Admin/AddAdmin"
-import Categories from "../pages/Categories/Categories";
+// import Categories from "../pages/Categories/Categories";
 import Earnings from "../pages/Earnings/Earnings";
 import Bookings from "../pages/Bookings/Bookings";
 import Notifications from "../pages/Notifications/Notifications";
-import Subscriptions from "../pages/subscriptions/Subscriptions";
+// import Subscriptions from "../pages/subscriptions/Subscriptions";
 import Chat from "../pages/chat/Chat";
 import Vehicles from "../pages/Vehicles/Vehicles";
+import Reviews from "../pages/Reviews/Reviews";
+import FAQ from "../pages/FAQ/FAQ";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +95,10 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
+        path: "/faq",
+        element: <FAQ />
+      },
+      {
         path: "/create-admin",
         element: <CreateAdmin />,
       },
@@ -112,11 +118,6 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage />,
       },
-
-      {
-        path: "/categories",
-        element: <Categories />
-      },
       {
         path: "/earnings",
         element: <Earnings />
@@ -126,17 +127,13 @@ const router = createBrowserRouter([
         element: <Bookings />
       },
       {
-        path: "/subscriptions",
-        element: <Subscriptions />
+        path: "/vehicles",
+        element: <Vehicles />,
       },
       {
-        path: "/vehicles",
-        element: <Vehicles />
-      },
-      // {
-      //   path:"/chat",
-      //   element:<Chat/>
-      // },
+        path: "/reviews",
+        element: <Reviews />,
+      }
     ],
   },
 ]);
