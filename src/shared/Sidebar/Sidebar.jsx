@@ -9,6 +9,7 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { BsCurrencyDollar, BsCreditCard } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import { FaCalendarCheck, FaStar } from "react-icons/fa";
+import { HiDocumentText } from "react-icons/hi";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -190,6 +191,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <MdAdminPanelSettings className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/create-admin") ? "" : "group-hover:scale-110"}`} />
               <p className="text-xs sm:text-sm font-semibold">Create Admin</p>
               {isActive("/create-admin") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
+            </li>
+          </Link>
+
+          {/* Content */}
+          <Link to="/content" onClick={handleLinkClick}>
+            <li
+              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
+                ${isActive("/content")
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
+                }`}
+            >
+              <HiDocumentText className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/content") ? "" : "group-hover:scale-110"}`} />
+              <p className="text-xs sm:text-sm font-semibold">Content</p>
+              {isActive("/content") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
             </li>
           </Link>
 

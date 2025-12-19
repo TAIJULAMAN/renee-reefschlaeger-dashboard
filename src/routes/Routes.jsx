@@ -26,6 +26,7 @@ import Chat from "../pages/chat/Chat";
 import Vehicles from "../pages/Vehicles/Vehicles";
 import Reviews from "../pages/Reviews/Reviews";
 import FAQ from "../pages/FAQ/FAQ";
+import Content from "../pages/Content/Content";
 
 const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
       {
         path: "/create-admin",
         element: <CreateAdmin />,
+      },
+      {
+        path: "/content",
+        element: <Content />
       },
       {
         path: "/add-admin",
