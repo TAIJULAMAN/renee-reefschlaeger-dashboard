@@ -17,11 +17,9 @@ import AboutUs from "../pages/optional/AboutUs";
 import EditProfile from "../pages/profile/EditProfile";
 import CreateAdmin from "../pages/Create Admin/CreateAdmin";
 import AddAdmin from "../pages/Add Admin/AddAdmin"
-// import Categories from "../pages/Categories/Categories";
 import Earnings from "../pages/Earnings/Earnings";
 import Bookings from "../pages/Bookings/Bookings";
 import Notifications from "../pages/Notifications/Notifications";
-// import Subscriptions from "../pages/subscriptions/Subscriptions";
 import Vehicles from "../pages/Vehicles/Vehicles";
 import Reviews from "../pages/Reviews/Reviews";
 import FAQ from "../pages/FAQ/FAQ";
@@ -134,10 +132,6 @@ const router = createBrowserRouter([
       {
         path: "/add-admin",
         element: <AddAdmin />,
-      },
-      {
-        path: "/chat",
-        element: <Chat />,
       },
       {
         path: "/notifications",
