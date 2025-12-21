@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch, FiPlus, FiEdit, FiTrash2 } from 'react-icons/fi';
-import { IoChevronBack, IoClose } from 'react-icons/io5';
-import { TbTruckDelivery } from 'react-icons/tb';
-import { FaCar, FaTools, FaCheckCircle, FaRegEye } from 'react-icons/fa';
+import { IoChevronBack } from 'react-icons/io5';
+import { FaRegEye } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { ConfigProvider, Table, Modal } from 'antd';
 
@@ -110,18 +109,7 @@ const Vehicles = () => {
         { key: 2, vehicleId: 'VH-002', name: 'BMW 5 Series', capacity: 4, licensePlate: 'DUB-5678', driver: 'Sarah Connor', status: 'Active' },
         { key: 3, vehicleId: 'VH-003', name: 'Ford Transit', capacity: 12, licensePlate: 'DUB-9012', driver: 'Mike Johnson', status: 'Maintenance' },
         { key: 4, vehicleId: 'VH-004', name: 'Audi A6', capacity: 4, licensePlate: 'DUB-3456', driver: 'Emma Wilson', status: 'Active' },
-        { key: 5, vehicleId: 'VH-005', name: 'Volkswagen Crafter', capacity: 14, licensePlate: 'DUB-7890', driver: 'David Brown', status: 'Active' },
-        { key: 6, vehicleId: 'VH-006', name: 'Tesla Model S', capacity: 5, licensePlate: 'DUB-2468', driver: 'Lisa Anderson', status: 'Active' },
-        { key: 7, vehicleId: 'VH-007', name: 'Mercedes Vito', capacity: 8, licensePlate: 'DUB-1357', driver: 'James Taylor', status: 'Maintenance' },
-        { key: 8, vehicleId: 'VH-008', name: 'Toyota Camry', capacity: 4, licensePlate: 'DUB-9753', driver: 'Maria Garcia', status: 'Active' },
-        { key: 9, vehicleId: 'VH-009', name: 'Renault Master', capacity: 16, licensePlate: 'DUB-8642', driver: 'Thomas Lee', status: 'Out of Service' },
-        { key: 10, vehicleId: 'VH-010', name: 'Lexus ES', capacity: 5, licensePlate: 'DUB-7531', driver: 'Anna Martinez', status: 'Active' },
-        { key: 11, vehicleId: 'VH-011', name: 'Peugeot Boxer', capacity: 12, licensePlate: 'DUB-9514', driver: 'Robert Clark', status: 'Active' },
     ];
-
-    const totalVehicles = vehicles.length;
-    const activeVehicles = vehicles.filter(v => v.status === 'Active').length;
-    const maintenanceVehicles = vehicles.filter(v => v.status === 'Maintenance').length;
 
     const columns = [
         {
@@ -257,65 +245,10 @@ const Vehicles = () => {
                 </div>
             </div>
 
-            {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
-                <div className="group relative bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/50 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
-                    <div className="relative flex items-center justify-between">
-                        <div className="flex-1">
-                            <p className="text-slate-600 text-sm md:text-base font-medium mb-2">Total Vehicles</p>
-                            <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-                                {totalVehicles}
-                            </p>
-                            <p className="text-sm text-green-600 mt-2 font-medium">+3 from last month</p>
-                        </div>
-                        <div className="p-4 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <TbTruckDelivery className="w-7 h-7 md:w-8 md:h-8 text-white" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="group relative bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/50 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-600 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
-                    <div className="relative flex items-center justify-between">
-                        <div className="flex-1">
-                            <p className="text-slate-600 text-sm md:text-base font-medium mb-2">Active</p>
-                            <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
-                                {activeVehicles}
-                            </p>
-                            <p className="text-sm text-green-600 mt-2 font-medium">Ready for service</p>
-                        </div>
-                        <div className="p-4 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <FaCheckCircle className="w-7 h-7 md:w-8 md:h-8 text-white" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="group relative bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/50 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500 to-amber-600 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity"></div>
-                    <div className="relative flex items-center justify-between">
-                        <div className="flex-1">
-                            <p className="text-slate-600 text-sm md:text-base font-medium mb-2">In Maintenance</p>
-                            <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
-                                {maintenanceVehicles}
-                            </p>
-                            <p className="text-sm text-orange-600 mt-2 font-medium">Under service</p>
-                        </div>
-                        <div className="p-4 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <FaTools className="w-7 h-7 md:w-8 md:h-8 text-white" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {/* Vehicles Table */}
             <ConfigProvider
                 theme={{
                     components: {
-                        Pagination: {
-                            colorPrimary: "#2563eb",
-                            colorPrimaryHover: "#1d4ed8",
-                        },
                         Table: {
                             headerBg: '#60a5fa',
                             headerColor: '#ffffff',
@@ -329,7 +262,6 @@ const Vehicles = () => {
                 <Table
                     dataSource={vehicles}
                     columns={columns}
-                    pagination={{ pageSize: 10 }}
                     scroll={{ x: "max-content" }}
                     className="custom-vehicles-table"
                 />
