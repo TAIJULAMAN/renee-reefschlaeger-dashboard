@@ -1,196 +1,270 @@
-# Ireland Go Dashboard 🚗🇮🇪
+# Detroit Fit 313 Admin Dashboard 🏋️‍♂️💪
 
-A modern, feature-rich admin dashboard for managing Ireland Go's transportation services, including private transfers, day trips, multi-day tours, and transfer routes across Ireland.
+A modern, feature-rich admin dashboard for managing Detroit Fit 313's fitness platform, including user management, earnings tracking, booking management, and comprehensive analytics.
 
-![React](https://img.shields.io/badge/React-18.3.1-blue?logo=react)
-![Vite](https://img.shields.io/badge/Vite-6.3.6-646CFF?logo=vite)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.17-38B2AC?logo=tailwind-css)
-![Ant Design](https://img.shields.io/badge/Ant%20Design-5.23.4-0170FE?logo=ant-design)
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6.0.5-646CFF?logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0.3-38B2AC?logo=tailwind-css&logoColor=white)
+![Ant Design](https://img.shields.io/badge/Ant%20Design-5.23.4-0170FE?logo=ant-design&logoColor=white)
+![React Router](https://img.shields.io/badge/React%20Router-7.1.5-CA4245?logo=react-router&logoColor=white)
 
-## 🌟 Features
+---
+
+## ✨ Features
 
 ### 📊 Dashboard & Analytics
-- Real-time statistics and metrics
-- Interactive charts and graphs
-- Performance monitoring
+- **Real-time Statistics**: Track total users, agents, and revenue at a glance
+- **Revenue Growth Chart**: Interactive line chart powered by Chart.js showing revenue trends over time
+- **User Distribution**: Visual pie chart displaying the breakdown between users and agents
+- **Recent Users Table**: Quick view of the latest user registrations with profile details
+- **Year Filtering**: Dynamic year selector to view historical data
 
-### 🚐 Fleet Management
-- **Vehicles**: Complete CRUD operations for fleet management
-- Vehicle details, status tracking, and maintenance records
-- Action buttons for view, edit, and delete operations
+### 👥 User Management
+- **All Users Page**: Comprehensive user directory with detailed information
+- **User Profiles**: View complete user details including contact information and registration dates
+- **Role Management**: Distinguish between regular users and agents
+- **Search & Filter**: Quickly find users with advanced filtering options
+
+### 💰 Earnings Management
+- **Transaction Tracking**: Monitor all financial transactions
+- **Revenue Analytics**: Detailed breakdown of earnings by period
+- **Payment History**: Complete transaction logs with timestamps
+- **Financial Reports**: Generate and export earning reports
 
 ### 📅 Booking Management
-- **Bookings**: View and manage all customer bookings
-- Booking details with customer information
-- Status tracking and updates
+- **Booking Overview**: View all bookings in a centralized dashboard
+- **Booking Details**: Access comprehensive booking information
+- **Status Tracking**: Monitor booking statuses (pending, confirmed, completed, cancelled)
+- **Customer Information**: Quick access to customer details for each booking
 
-### 💰 Financial Management
-- **Earnings**: Track revenue and transactions
-- Detailed transaction history
-- Financial analytics and reporting
-
-### ⭐ Customer Engagement
-- **Reviews**: Manage customer reviews and ratings
-- Star rating system
-- Review moderation and responses
-
-### 📝 Content Management
-Comprehensive content management system with four main sections:
-
-#### 1. **Private Transfers**
-- Manage point-to-point transfer routes
-- Location-based filtering (dropdown select)
-- From/To location dropdowns (18 Irish cities)
-- Distance, pricing, and descriptions
-- Image upload with preview
-
-#### 2. **Popular Day Trips**
-- Curated day trip packages
-- Duration and group type management
-- Pricing per person
-- Image gallery support
-
-#### 3. **Popular Multi-Day Tours**
-- Extended tour packages
-- Multi-day itinerary management
-- Comprehensive tour details
-- Image upload functionality
-
-#### 4. **Day Trips**
-- Location-based filtering (All, Dublin, Belfast, Cork, Limerick, Galway)
-- Departure city selection
-- Full CRUD operations with modals
-- Image upload with preview
-
-#### 5. **Popular Transfer Routes**
-- Popular routes from major cities
-- Location filtering dropdown
-- Route descriptions and highlights
-- Distance/time information
-
-### 👥 User & Admin Management
-- **User Details**: View and manage customer accounts
-- **Create Admin**: Admin account creation and management
-- Role-based access control
-
-### 📢 Communication
-- **Notifications**: System-wide notification management
-- Real-time alerts and updates
-
-### ❓ Support & Information
-- **FAQ**: Frequently asked questions management
-- Add, edit, and delete FAQ items
-- Categorized help content
+### 🔔 Notifications
+- **System Notifications**: Manage platform-wide announcements
+- **User Alerts**: Send targeted notifications to specific user groups
+- **Real-time Updates**: Instant notification delivery system
+- **Notification History**: Track all sent notifications
 
 ### ⚙️ Settings & Configuration
-- **Settings**: System configuration
-- **Profile Management**: Admin profile updates
-- **Change Password**: Secure password management
-- **Privacy Policy**: Policy management
-- **Terms & Conditions**: Terms management
-- **About Us**: Company information
 
-### 📊 Reporting
-- **Reports**: Generate and view system reports
-- Status filtering (All, Pending, Resolved, Rejected)
-- Edit report status functionality
+#### Profile Management
+- **Edit Profile**: Update admin profile information
+- **Change Password**: Secure password management with validation
+- **Profile Picture**: Upload and manage profile images
+
+#### System Settings
+- **General Settings**: Configure platform-wide settings
+- **Privacy Policy**: Manage and update privacy policy content
+- **Terms & Conditions**: Edit terms and conditions
+- **About Us**: Update company information and mission statement
+
+### 🔐 Authentication & Security
+- **Secure Sign In**: Protected admin authentication
+- **Forgot Password**: Email-based password recovery
+- **Verification Code**: Two-step verification process
+- **Reset Password**: Secure password reset flow
+- **Session Management**: Automatic logout and session timeout
+
+---
 
 ## 🛠️ Tech Stack
 
 ### Frontend Framework
-- **React 18.3.1** - Modern UI library
-- **Vite 6.3.6** - Fast build tool and dev server
+- **React 18.3.1** - Modern UI library with hooks and concurrent features
+- **Vite 6.0.5** - Lightning-fast build tool and dev server with HMR
 
-### Styling
-- **TailwindCSS 3.4.17** - Utility-first CSS framework
-- **Ant Design 5.23.4** - Enterprise-level UI components
-- Custom gradient themes and modern design patterns
+### Styling & UI
+- **TailwindCSS 4.0.3** - Utility-first CSS framework with custom configuration
+- **Ant Design 5.23.4** - Enterprise-level UI component library
+- **Custom Gradients** - Amber to orange gradient theme (#F3AB0C → #F96803)
+- **Glassmorphism Effects** - Modern frosted glass UI elements
 
-### Routing
-- **React Router DOM 7.1.1** - Client-side routing
+### Data Visualization
+- **Chart.js 4.5.1** - Powerful charting library for analytics
+- **React Chart.js 2 (5.3.1)** - React wrapper for Chart.js
+- **Recharts 2.15.4** - Composable charting library built on React components
+
+### Routing & Navigation
+- **React Router DOM 7.1.5** - Declarative routing for React applications
 
 ### Icons
-- **React Icons 5.4.0** - Comprehensive icon library
+- **React Icons 5.5.0** - Comprehensive icon library including:
   - Feather Icons (Fi)
   - Ionicons (Io)
   - Font Awesome (Fa)
   - Material Design (Md)
+  - Bootstrap Icons (Bs)
+  - Heroicons (Hi)
+  - Tabler Icons (Tb)
+  - Lucide Icons (Lu)
 
-### Form Handling
-- **React Hook Form 7.54.2** - Performant form validation
+### Utilities
+- **Day.js 1.11.13** - Lightweight date manipulation library
+- **html2pdf.js 0.12.1** - Client-side PDF generation
+- **React Quill 2.0.0** - Rich text editor for content management
+
+### Development Tools
+- **ESLint 9.17.0** - Code quality and consistency
+- **Vite Plugin React 4.3.4** - Fast Refresh and JSX support
+
+---
 
 ## 📁 Project Structure
 
 ```
-ireland-go-dashboard/
+detroit-fit-313-dashboard/
+├── public/
+│   ├── logo.png                    # Application logo
+│   ├── mar.jpg                     # Marketing image
+│   └── userimg.png                 # Default user avatar
 ├── src/
+│   ├── assets/                     # Static assets
+│   ├── components/                 # Reusable components
 │   ├── layout/
-│   │   └── MainLayout.jsx          # Main application layout
+│   │   └── MainLayout.jsx          # Main application layout with sidebar
 │   ├── pages/
 │   │   ├── auth/                   # Authentication pages
-│   │   ├── dashboard/              # Dashboard home
-│   │   ├── Bookings/               # Booking management
-│   │   ├── Earnings/               # Financial tracking
-│   │   ├── Vehicles/               # Fleet management
-│   │   ├── Reviews/                # Review management
-│   │   ├── Content/                # Content management
-│   │   │   ├── Content.jsx         # Content hub
-│   │   │   ├── PrivateTransfers.jsx
-│   │   │   ├── PopularDayTrips.jsx
-│   │   │   ├── PopularMultiDayTours.jsx
-│   │   │   ├── DayTrips.jsx
-│   │   │   └── PopularTransferRoutes.jsx
-│   │   ├── FAQ/                    # FAQ management
-│   │   ├── Reports/                # Reporting system
-│   │   ├── Settings/               # Settings & config
-│   │   └── profile/                # Profile management
+│   │   │   ├── SignInPage.jsx      # Login page
+│   │   │   ├── ForgetPassword.jsx  # Password recovery
+│   │   │   ├── VerificationCode.jsx # Code verification
+│   │   │   └── ResetPassword.jsx   # Password reset
+│   │   ├── dashboard/              # Dashboard & analytics
+│   │   │   ├── DashboardPage.jsx   # Main dashboard
+│   │   │   ├── RevenueChart.jsx    # Revenue analytics chart
+│   │   │   ├── UserAgentChart.jsx  # User distribution chart
+│   │   │   └── RecentUsers.jsx     # Recent users table
+│   │   ├── Bookings/
+│   │   │   └── Bookings.jsx        # Booking management
+│   │   ├── Earnings/
+│   │   │   └── Earnings.jsx        # Financial tracking
+│   │   ├── Notifications/
+│   │   │   └── Notifications.jsx   # Notification center
+│   │   ├── userDetails/
+│   │   │   └── UserDetails.jsx     # User management
+│   │   ├── profile/                # Profile management
+│   │   │   ├── ProfilePage.jsx     # Profile view
+│   │   │   ├── EditProfile.jsx     # Profile editing
+│   │   │   └── ChangePass.jsx      # Password change
+│   │   ├── Settings/
+│   │   │   └── Settings.jsx        # System settings
+│   │   ├── Privacy Policy/
+│   │   │   └── PrivacyPolicy.jsx   # Privacy policy management
+│   │   ├── Terms Condition/
+│   │   │   └── TermsCondition.jsx  # Terms management
+│   │   └── optional/
+│   │       └── AboutUs.jsx         # About page
 │   ├── shared/
-│   │   ├── Sidebar/                # Navigation sidebar
-│   │   └── MainHeader/             # Header component
+│   │   ├── Sidebar/
+│   │   │   └── Sidebar.jsx         # Navigation sidebar
+│   │   └── MainHeader/
+│   │       └── MainHeader.jsx      # Application header
 │   ├── routes/
 │   │   └── Routes.jsx              # Route configuration
-│   └── App.jsx                     # Root component
-├── public/                         # Static assets
-└── package.json                    # Dependencies
+│   ├── App.jsx                     # Root component
+│   ├── main.jsx                    # Application entry point
+│   └── index.css                   # Global styles
+├── index.html                      # HTML template
+├── package.json                    # Dependencies
+├── vite.config.js                  # Vite configuration
+├── vercel.json                     # Vercel deployment config
+└── README.md                       # This file
 ```
 
-## 🎨 Design Features
+---
 
-### Modern UI/UX
-- **Gradient Headers**: Beautiful blue-to-indigo gradients
-- **Glassmorphism**: Frosted glass effects on cards
-- **Smooth Animations**: Transition effects throughout
-- **Responsive Design**: Mobile-first approach
-- **Color-Coded Status**: Visual status indicators
+## 🎨 Design System
 
-### Component Patterns
-- **Ant Design Tables**: Customized with blue headers
-- **Modal System**: Consistent modal designs for CRUD operations
-- **Image Upload**: File upload with live preview
-- **Dropdown Filters**: Location-based filtering
-- **Action Buttons**: View (blue), Edit (green), Delete (red)
+### Color Palette
+The dashboard features a vibrant, energetic color scheme perfect for a fitness brand:
 
-### Irish Cities Supported
-Dublin, Galway, Cork, Belfast, Limerick, Killarney, Waterford, Derry, Sligo, Kilkenny, Wexford, Tralee, Ennis, Drogheda, Dundalk, Bray, Navan, Athlone
+- **Primary Gradient**: `#F3AB0C` (Amber) → `#F96803` (Orange)
+- **Background**: Slate with amber/orange accents
+- **Text**: Slate-700 for body, gradient for headings
+- **Success**: Green tones for positive actions
+- **Danger**: Red-500 to Rose-600 for destructive actions
 
-## 🔐 Authentication
+### UI Components
 
-- Sign In page with form validation
-- Forgot Password flow
-- Verification Code system
-- Reset Password functionality
+#### Sidebar Navigation
+- **Gradient Background**: Slate to amber/orange gradient
+- **Active States**: Full gradient background with shadow effects
+- **Hover Effects**: Subtle scale animations and background changes
+- **Responsive**: Slide-in drawer on mobile, fixed on desktop
+- **Sections**:
+  - Main Menu (Dashboard, All Users, Earnings, Bookings)
+  - Administration (Settings)
+  - Logout (Fixed at bottom)
 
-## 📱 Responsive Design
+#### Dashboard Cards
+- **Stat Cards**: Gradient backgrounds with icons
+- **Charts**: Interactive Chart.js visualizations
+- **Tables**: Ant Design tables with custom amber/orange headers
+- **Glassmorphism**: Frosted glass effects on overlays
 
-The dashboard is fully responsive and optimized for:
-- Desktop (1920px+)
-- Laptop (1024px - 1919px)
-- Tablet (768px - 1023px)
-- Mobile (320px - 767px)
+#### Buttons & Actions
+- **Primary**: Amber to orange gradient
+- **View**: Amber accent color
+- **Edit**: Green for modifications
+- **Delete**: Red for destructive actions
+- **Hover**: Scale animations and shadow enhancements
 
-## 📝 License
+### Responsive Design
+Fully responsive across all devices:
+- **Desktop**: 1920px+ (Full sidebar, expanded charts)
+- **Laptop**: 1024px - 1919px (Standard layout)
+- **Tablet**: 768px - 1023px (Collapsible sidebar)
+- **Mobile**: 320px - 767px (Drawer navigation, stacked layout)
 
-This project is private and proprietary.
+### Animations & Transitions
+- **Smooth Transitions**: 300ms ease-in-out for all interactions
+- **Hover Effects**: Scale transforms (1.01-1.02)
+- **Active Indicators**: Pulsing dots on active menu items
+- **Loading States**: Skeleton screens and spinners
+
+---
+
+## 📊 Dashboard Features
+
+### Statistics Cards
+- **Total Users**: Count of all registered users
+- **Total Agents**: Count of registered agents
+- **Total Revenue**: Sum of all earnings
+
+### Charts
+1. **Revenue Growth Chart** (Line Chart)
+   - Monthly revenue trends
+   - Interactive tooltips
+   - Year-based filtering
+   - Gradient fill under line
+
+2. **User vs Agent Chart** (Pie Chart)
+   - Visual distribution
+   - Percentage breakdown
+   - Color-coded segments
+
+### Recent Users Table
+- User profile pictures
+- Name and email
+- Registration date
+- User type (User/Agent)
+- Quick actions
+
+---
 
 
-**Built with ❤️ for Ireland Go** 🚗🇮🇪
+### Best Practices
+- Keep components focused and single-purpose
+- Use custom hooks for shared logic
+- Implement proper error boundaries
+- Add loading states for async operations
+- Ensure accessibility (ARIA labels, keyboard navigation)
+
+---
+
+
+## 📄 License
+
+This project is private and proprietary to Detroit Fit 313.
+
+
+
+**Built with ❤️ for Detroit Fit 313** 🏋️‍♂️💪
+
