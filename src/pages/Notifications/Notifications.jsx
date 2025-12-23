@@ -46,7 +46,7 @@ export default function Notifications() {
     setItems((prev) => prev.map((i) => ({ ...i, read: true })));
   return (
     <div className="p-5 min-h-screen">
-      <div className="bg-blue-600 px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap md:flex-nowrap items-start md:items-center gap-2 md:gap-3">
+      <div className="bg-[#F3AB0C] px-4 md:px-5 py-3 rounded-md mb-3 flex flex-wrap md:flex-nowrap items-start md:items-center gap-2 md:gap-3">
         <button
           onClick={() => navigate(-1)}
           className="text-white hover:opacity-90 transition"
@@ -72,22 +72,20 @@ export default function Notifications() {
           },
         }}
       >
-        <div className="bg-transparent">
+        <div className="">
           <List
             split={false}
             dataSource={items}
             renderItem={(item) => (
               <div
                 onClick={() => !item.read && markRead(item.id, true)}
-                className={`group flex items-start justify-between gap-4 p-4 border border-gray-200 bg-white rounded-lg mb-3 transition hover:shadow-sm cursor-pointer ${
-                  item.read ? "opacity-90" : ""
-                }`}
+                className={`group flex items-start justify-between gap-4 p-4 border border-gray-200 bg-white rounded-lg mb-3 transition hover:shadow-sm cursor-pointer ${item.read ? "opacity-90" : ""
+                  }`}
               >
                 {/* Unread Accent Bar */}
                 <div
-                  className={`w-1 rounded-full self-stretch ${
-                    item.read ? "bg-transparent" : "bg-blue-600"
-                  }`}
+                  className={`w-1 rounded-full self-stretch ${item.read ? "bg-transparent" : "bg-[#F3AB0C]"
+                    }`}
                 />
 
                 {/* Content */}

@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   return (
     <div
-      className={`bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 h-screen overflow-y-auto z-[60] transition-all duration-500 ease-in-out
+      className={`bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 h-screen overflow-y-auto z-[60] transition-all duration-500 ease-in-out
         w-[100%] sm:w-[85%] md:w-[75%] lg:w-72 xl:w-80
         ${isOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full shadow-none "}
         fixed top-0 left-0
@@ -34,12 +34,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       `}
     >
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-100/30 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-amber-100/30 pointer-events-none"></div>
 
       {/* Close Button (Mobile Only) */}
       <button
         onClick={toggleSidebar}
-        className="absolute top-6 right-6 lg:hidden text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none p-2.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[70]"
+        className="absolute top-6 right-6 lg:hidden text-white bg-gradient-to-r from-[#F3AB0C] to-[#F96803] hover:from-[#F96803] hover:to-[#F3AB0C] focus:outline-none p-2.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[70]"
         aria-label="Close sidebar"
       >
         <IoCloseSharp className="w-5 h-5" />
@@ -50,8 +50,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div className="relative">
         </div>
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">
-            Ireland Go
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#F3AB0C] to-[#F96803] bg-clip-text text-transparent">
+            Detroit Fit 313
           </h2>
           <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-1">Admin Dashboard</p>
         </div>
@@ -71,7 +71,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-[#F3AB0C]/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >
@@ -86,7 +86,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/user-details")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-[#F3AB0C]/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >
@@ -101,7 +101,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/earnings")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-[#F3AB0C]/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >
@@ -116,7 +116,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/bookings")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-[#F3AB0C]/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >
@@ -126,35 +126,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </li>
           </Link>
 
-          {/* Vehicles */}
-          <Link to="/vehicles" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/vehicles")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <TbTruckDelivery className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/vehicles") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Vehicles</p>
-              {isActive("/vehicles") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
 
-          {/* Reviews */}
-          <Link to="/reviews" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/reviews")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <FaStar className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/reviews") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Reviews</p>
-              {isActive("/reviews") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
 
           {/* Chat */}
           {/* <Link to="/chat" onClick={handleLinkClick}>
@@ -179,57 +151,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div className="space-y-0.5 sm:space-y-1">
           <p className="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider px-2 sm:px-3 mb-2 sm:mb-3">Administration</p>
 
-          {/* Create Admin */}
-          <Link to="/create-admin" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/create-admin")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <MdAdminPanelSettings className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/create-admin") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Create Admin</p>
-              {isActive("/create-admin") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
 
-          {/* Content */}
-          <Link to="/content" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/content")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <HiDocumentText className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/content") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Content</p>
-              {isActive("/content") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
-
-          {/* Reports */}
-          <Link to="/reports" onClick={handleLinkClick}>
-            <li
-              className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
-                ${isActive("/reports")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
-                  : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
-                }`}
-            >
-              <TbReport className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive("/reports") ? "" : "group-hover:scale-110"}`} />
-              <p className="text-xs sm:text-sm font-semibold">Reports</p>
-              {isActive("/reports") && <div className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>}
-            </li>
-          </Link>
 
           {/* Settings */}
           <Link to="/settings" onClick={handleLinkClick}>
             <li
               className={`group flex items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 ease-in-out list-none
                 ${isActive("/settings")
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-blue-500/30 scale-[1.02]"
+                  ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl shadow-lg shadow-[#F3AB0C]/30 scale-[1.02]"
                   : "text-slate-700 hover:bg-white/70 hover:shadow-md px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl hover:scale-[1.01]"
                 }`}
             >

@@ -31,7 +31,7 @@ const UserAgentChart = () => {
             {
                 label: 'Users',
                 data: [30, 45, 60, 70, 85, 95, 110, 125, 140, 160, 180, 200],
-                borderColor: 'rgb(59, 130, 246)', // Blue
+                borderColor: 'rgb(59, 130, 246)',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 fill: true,
                 tension: 0.4,
@@ -40,20 +40,7 @@ const UserAgentChart = () => {
                 pointBackgroundColor: 'rgb(59, 130, 246)',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
-            },
-            {
-                label: 'Agents',
-                data: [10, 15, 22, 28, 35, 42, 50, 58, 68, 78, 90, 105],
-                borderColor: 'rgb(168, 85, 247)', // Purple
-                backgroundColor: 'rgba(168, 85, 247, 0.1)',
-                fill: true,
-                tension: 0.4,
-                pointRadius: 4,
-                pointHoverRadius: 6,
-                pointBackgroundColor: 'rgb(168, 85, 247)',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-            },
+            }
         ],
     };
 

@@ -188,7 +188,7 @@ function UserDetails() {
   return (
     <div>
       {/* Modern Header with Gradient */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 md:px-6 py-4 md:py-5 rounded-2xl mb-5 shadow-lg">
+      <div className="bg-gradient-to-r from-[#F3AB0C] to-[#F96803] px-4 md:px-6 py-4 md:py-5 rounded-2xl mb-5 shadow-lg">
         <div className="flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-4">
           <button
             onClick={() => navigate(-1)}
@@ -231,11 +231,11 @@ function UserDetails() {
         theme={{
           components: {
             Pagination: {
-              colorPrimary: "#2563eb",
+              colorPrimary: "#F3AB0C",
               colorPrimaryHover: "#1d4ed8",
             },
             Table: {
-              headerBg: '#60a5fa',
+              headerBg: '#F3AB0C',
               headerColor: '#ffffff',
               cellFontSize: 14,
               headerSplitColor: 'transparent',
@@ -254,7 +254,7 @@ function UserDetails() {
 
         <style jsx global>{`
           .custom-user-table .ant-table-thead > tr > th {
-            background: #60a5fa !important;
+            background: #F3AB0C !important;
             color: white !important;
             font-weight: 600 !important;
           }

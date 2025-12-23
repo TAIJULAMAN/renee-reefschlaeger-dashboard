@@ -85,7 +85,7 @@ const RecentUsers = () => {
         theme={{
           components: {
             Table: {
-              headerBg: '#2563eb',
+              headerBg: '#F3AB0C',
               headerColor: '#ffffff',
               cellFontSize: 14,
               headerSplitColor: 'transparent',
@@ -105,7 +105,7 @@ const RecentUsers = () => {
 
       <style jsx global>{`
         .custom-table .ant-table-thead > tr > th {
-          background: #60a5fa !important;
+          background: #F3AB0C !important;
           color: white !important;
           font-weight: 600 !important;
         }

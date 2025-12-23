@@ -27,22 +27,22 @@ function DashboardPage() {
       value: '200K',
       label: 'Total Users',
       icon: FaUsers,
-      gradient: 'from-blue-500 to-indigo-600',
-      bgGradient: 'from-blue-50 to-indigo-50'
+      gradient: 'from-[#F3AB0C] to-[#F96803]',
+      bgGradient: 'from-amber-50 to-orange-50'
     },
     {
       value: '1200',
-      label: 'Total Agents',
+      label: 'Total Bookings',
       icon: HiUserGroup,
-      gradient: 'from-purple-500 to-pink-600',
-      bgGradient: 'from-purple-50 to-pink-50'
+      gradient: 'from-[#F3AB0C] to-[#F96803]',
+      bgGradient: 'from-amber-50 to-orange-50'
     },
     {
       value: '$120K',
       label: 'Total Revenue',
       icon: FaDollarSign,
-      gradient: 'from-emerald-500 to-teal-600',
-      bgGradient: 'from-emerald-50 to-teal-50'
+      gradient: 'from-[#F3AB0C] to-[#F96803]',
+      bgGradient: 'from-amber-50 to-orange-50'
     }
   ];
 
@@ -50,7 +50,7 @@ function DashboardPage() {
     <div className="flex flex-col space-y-6 p-4 md:p-6">
       {/* Welcome Section */}
       <div className="mb-5">
-        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">
+        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#F3AB0C] to-[#F96803] bg-clip-text text-transparent">
           Dashboard Overview
         </h1>
         <p className="text-slate-600 text-sm md:text-base mt-1">Welcome back! Here's what's happening today.</p>
@@ -87,23 +87,22 @@ function DashboardPage() {
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* User & Agent Growth Chart */}
-        <div className="w-full bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl shadow-lg p-5 md:p-7 border border-slate-200/60">
+        <div className="w-full bg-gradient-to-br from-slate-50 to-amber-50 rounded-2xl shadow-lg p-5 md:p-7 border border-slate-200/60">
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center mb-6">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">
-                User & Agent Growth
+              <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F3AB0C] to-[#F96803] bg-clip-text text-transparent">
+                User Growth
               </h2>
-              <p className="text-slate-600 text-sm mt-1">Track user and agent registration trends</p>
             </div>
 
             {/* Year Selector */}
             <div className="relative w-full md:w-44">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-4 py-2.5 border-2 border-blue-200 rounded-xl flex justify-between items-center bg-white hover:bg-blue-50 hover:border-blue-300 transition-all duration-200 shadow-sm"
+                className="w-full px-4 py-2.5 border-2 border-amber-200 rounded-xl flex justify-between items-center bg-white hover:bg-amber-50 hover:border-amber-300 transition-all duration-200 shadow-sm"
               >
                 <span className="text-slate-700 text-sm md:text-base font-semibold">{selectedYear}</span>
-                <FaChevronDown className={`text-blue-600 w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                <FaChevronDown className={`text-[#F3AB0C] w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isOpen && (
@@ -112,14 +111,14 @@ function DashboardPage() {
                     className="fixed inset-0 z-20"
                     onClick={() => setIsOpen(false)}
                   />
-                  <div className="absolute z-30 w-full mt-2 bg-white border-2 border-blue-100 rounded-xl shadow-xl max-h-60 overflow-y-auto">
+                  <div className="absolute z-30 w-full mt-2 bg-white border-2 border-amber-100 rounded-xl shadow-xl max-h-60 overflow-y-auto">
                     {years.map((year) => (
                       <div
                         key={year}
                         onClick={() => handleSelect(year)}
                         className={`px-4 py-3 cursor-pointer transition-all text-sm md:text-base ${year === selectedYear
-                          ? "bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold"
-                          : "text-slate-700 hover:bg-blue-50"
+                          ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white font-semibold"
+                          : "text-slate-700 hover:bg-amber-50"
                           }`}
                       >
                         {year}
@@ -143,20 +142,19 @@ function DashboardPage() {
         <div className="w-full bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl shadow-lg p-5 md:p-7 border border-slate-200/60">
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center mb-6">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent">
+              <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F3AB0C] to-[#F96803] bg-clip-text text-transparent">
                 Revenue Growth
               </h2>
-              <p className="text-slate-600 text-sm mt-1">Track revenue trends over time</p>
             </div>
 
             {/* Year Selector */}
             <div className="relative w-full md:w-44">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-4 py-2.5 border-2 border-emerald-200 rounded-xl flex justify-between items-center bg-white hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-200 shadow-sm"
+                className="w-full px-4 py-2.5 border-2 border-amber-200 rounded-xl flex justify-between items-center bg-white hover:bg-amber-50 hover:border-amber-300 transition-all duration-200 shadow-sm"
               >
                 <span className="text-slate-700 text-sm md:text-base font-semibold">{selectedYear}</span>
-                <FaChevronDown className={`text-emerald-600 w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                <FaChevronDown className={`text-[#F3AB0C] w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isOpen && (
@@ -165,14 +163,14 @@ function DashboardPage() {
                     className="fixed inset-0 z-20"
                     onClick={() => setIsOpen(false)}
                   />
-                  <div className="absolute z-30 w-full mt-2 bg-white border-2 border-emerald-100 rounded-xl shadow-xl max-h-60 overflow-y-auto">
+                  <div className="absolute z-30 w-full mt-2 bg-white border-2 border-amber-100 rounded-xl shadow-xl max-h-60 overflow-y-auto">
                     {years.map((year) => (
                       <div
                         key={year}
                         onClick={() => handleSelect(year)}
                         className={`px-4 py-3 cursor-pointer transition-all text-sm md:text-base ${year === selectedYear
-                          ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold"
-                          : "text-slate-700 hover:bg-emerald-50"
+                          ? "bg-gradient-to-r from-[#F3AB0C] to-[#F96803] text-white font-semibold"
+                          : "text-slate-700 hover:bg-amber-50"
                           }`}
                       >
                         {year}
@@ -197,7 +195,7 @@ function DashboardPage() {
       <div className="w-full">
         <div className="flex items-center gap-3 mb-5">
           <div>
-            <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">
+            <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F3AB0C] to-[#F96803] bg-clip-text text-transparent">
               Recent Joined Users
             </h2>
           </div>

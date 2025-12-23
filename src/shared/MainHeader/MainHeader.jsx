@@ -50,7 +50,7 @@ const MainHeader = ({ toggleSidebar }) => {
               className="relative p-2 rounded-full border border-blue-600 hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200"
             >
               <IoNotificationsOutline className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-              <span className="absolute -top-0.5 -right-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-blue-600 text-white text-[10px] px-1 leading-none font-semibold">3</span>
+              <span className="absolute -top-0.5 -right-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-[#F3AB0C] text-white text-[10px] px-1 leading-none font-semibold">3</span>
             </button>
 
             {/* Profile */}

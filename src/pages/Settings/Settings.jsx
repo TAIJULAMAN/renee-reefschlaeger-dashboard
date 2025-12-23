@@ -7,7 +7,7 @@ export default function Settings() {
       {/* Card */}
       <div className="bg-white rounded-md shadow border border-gray-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-blue-600 px-5 py-3">
+        <div className="bg-[#F3AB0C] px-5 py-3">
           <h1 className="text-white text-2xl font-bold">Settings</h1>
         </div>
 
@@ -45,16 +45,7 @@ export default function Settings() {
               <IoChevronForward className="text-gray-500" />
             </Link>
           </li>
-          {/* FAQ */}
-          <li>
-            <Link
-              to="/faq"
-              className="flex items-center justify-between px-5 py-4 hover:bg-gray-50 transition"
-            >
-              <span className="text-gray-800 text-base">FAQ</span>
-              <IoChevronForward className="text-gray-500" />
-            </Link>
-          </li>
+
         </ul>
       </div>
     </div>
